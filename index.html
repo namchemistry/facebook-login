@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook Login</title>
+    <title>Facebook – Đăng nhập hoặc đăng ký</title>
     <style>
         * {
             margin: 0;
@@ -11,32 +11,56 @@
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
-        
+
         body {
             background-color: #f0f2f5;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            flex-direction: column;
         }
-        
-        .login-container {
-            width: 360px;
+
+        .container {
+            display: flex;
+            width: 70%;
+            max-width: 1000px;
+        }
+
+        .left {
+            flex: 1;
             padding: 20px;
+        }
+
+        .left h1 {
+            color: #1877f2;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .left p {
+            font-size: 20px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 350px;
             text-align: center;
         }
-        
-        .login-container h1 {
-            color: #1877f2;
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        
-        .input-field {
+
+        input {
+            display: block;
             width: 100%;
             padding: 12px;
             margin: 10px 0;
@@ -44,83 +68,55 @@
             border-radius: 5px;
             font-size: 16px;
         }
-        
-        .login-btn {
-            width: 100%;
-            padding: 12px;
-            background: #1877f2;
+
+        button {
+            background-color: #1877f2;
             color: white;
-            font-size: 16px;
-            font-weight: bold;
+            padding: 12px;
+            width: 100%;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px;
-        }
-        
-        .login-btn:hover {
-            background: #166fe5;
+            font-size: 18px;
         }
 
-        .forgot-password {
+        .forgot {
             display: block;
-            margin: 15px 0;
             color: #1877f2;
+            margin: 10px 0;
             text-decoration: none;
             font-size: 14px;
         }
 
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-
-        .divider {
-            height: 1px;
-            background: #ccc;
-            margin: 15px 0;
-        }
-
-        .register-btn {
-            background: #42b72a;
-            padding: 12px;
-            width: 100%;
-            color: white;
+        .create-account {
+            background-color: #42b72a;
+            margin-top: 10px;
             font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .register-btn:hover {
-            background: #36a420;
         }
     </style>
 </head>
 <body>
-
-    <div class="login-container">
-        <h1>Facebook</h1>
-        <input type="text" class="input-field" id="email" placeholder="Email hoặc số điện thoại">
-        <input type="password" class="input-field" id="password" placeholder="Mật khẩu">
-        <button class="login-btn" onclick="login()">Đăng nhập</button>
-        <a href="#" class="forgot-password">Quên mật khẩu?</a>
-        <div class="divider"></div>
-        <button class="register-btn">Tạo tài khoản mới</button>
+    <div class="container">
+        <div class="left">
+            <h1>facebook</h1>
+            <p>Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống của bạn.</p>
+        </div>
+        <div class="right">
+            <div class="login-box">
+                <input type="text" id="username" placeholder="Email hoặc số điện thoại">
+                <input type="password" id="password" placeholder="Mật khẩu">
+                <button onclick="login()">Đăng nhập</button>
+                <a href="#" class="forgot">Quên mật khẩu?</a>
+                <hr>
+                <button class="create-account">Tạo tài khoản mới</button>
+            </div>
+        </div>
     </div>
 
     <script>
         function login() {
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-
-            if (email === "" || password === "") {
-                alert("Vui lòng nhập đầy đủ thông tin!");
-            } else {
-                alert("Đăng nhập thành công với: " + email);
-            }
+            window.location.replace("https://facebook.com"); 
         }
     </script>
-
 </body>
 </html>
